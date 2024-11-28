@@ -6,7 +6,7 @@
  * @arg: The va_list containing the arguments for the format string.
  * @print: Array of print_t structures mapping format specifiers to functions.
  * Return: The number of characters printed for the format specifier.
- */
+ **/
 int handle_specifier(const char *format,
 unsigned int *i, va_list arg, print_t print[])
 {
@@ -37,7 +37,7 @@ return (len);
  * 'c', 's', 'i', 'd', and '%%'.
  * Return: The total number of characters printed on success,
  * or -1 if an error occurs (e.g., NULL format or lone '%').
- */
+ **/
 int _printf(const char *format, ...)
 {
 va_list arg;
