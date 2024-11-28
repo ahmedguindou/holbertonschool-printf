@@ -18,18 +18,17 @@ if (format[*i + 1] == print[j].print[0])
 len = print[j].p(arg);
 flag = 1;
 (*i)++;
-			break;
-		}
-		j++;
-	}
-	if (flag == 0)
-	{
-		_putchar(format[*i]);
-		len++;
-	}
-	return (len);
+break;
 }
-
+j++;
+}
+if (flag == 0)
+{
+_putchar(format[*i]);
+len++;
+}
+return (len);
+}
 /**
  * _printf - Custom printf function
  * @format: Format string containing the characters and specifiers.
@@ -41,31 +40,30 @@ flag = 1;
  */
 int _printf(const char *format, ...)
 {
-	va_list arg;
-	unsigned int i = 0, len = 0;
-	print_t print[] = {{"c", print_char}, {"s", print_string},
-			   {"i", print_i}, {"d", print_d}, {NULL, NULL}};
-
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
-	va_start(arg, format);
-	while (format[i] != '\0')
-	{
-		if (format[i] == '%' && format[i + 1] != '%')
-			len += handle_specifier(format, &i, arg, print);
-		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putchar('%');
-			len++;
-			i++;
-		}
-		else
-		{
-			_putchar(format[i]);
-			len++;
-		}
-		i++;
-	}
-	va_end(arg);
-	return (len);
+va_list arg;
+unsigned int i = 0, len = 0;
+print_t print[] = {{"c", print_char}, {"s", print_string},
+{"i", print_i}, {"d", print_d}, {NULL, NULL}};
+if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+return (-1);
+va_start(arg, format);
+while (format[i] != '\0')
+{
+if (format[i] == '%' && format[i + 1] != '%')
+len += handle_specifier(format, &i, arg, print);
+else if (format[i] == '%' && format[i + 1] == '%')
+{
+_putchar('%');
+len++;
+i++;
+}
+else
+{
+_putchar(format[i]);
+len++;
+}
+i++;
+}
+va_end(arg);
+return (len);
 }
