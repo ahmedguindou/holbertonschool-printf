@@ -18,7 +18,7 @@ va_start(arg, format);
 if (format == NULL)
 return (-1);
 if (format[0] == '%' && format[1] == '\0')
-return (0);
+return (-1);
 i = 0;
 while (format[i] != '\0')
 {
@@ -58,4 +58,3 @@ i++;
 va_end(arg);
 return (len);
 }
-
