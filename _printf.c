@@ -15,7 +15,9 @@ print_t print[] = {
 {"i", print_i}, {"d", print_d}, {NULL, NULL}
 };
 va_start(arg, format);
-if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+if (format == NULL)
+return (-1);
+if (format[0] == '%' && format[1] == '\0')
 return (0);
 i = 0;
 while (format[i] != '\0')
@@ -56,3 +58,4 @@ i++;
 va_end(arg);
 return (len);
 }
+
