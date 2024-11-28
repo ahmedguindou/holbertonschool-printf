@@ -8,23 +8,27 @@
  * Return: The total number of characters printed on success,
  * or -1 if an error occurs (e.g., NULL format or lone '%').
  */
-#include "main.h"
 int _printf(const char *format, ...)
 {
 va_list arg;
-unsigned int i = 0, len = 0;
+unsigned int i, j, flag;
+unsigned int len = 0;
 print_t print[] = {
 {"c", print_char}, {"s", print_string},
 {"i", print_i}, {"d", print_d}, {NULL, NULL}
 };
-if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-return (-1);
 va_start(arg, format);
+if (format == NULL)
+return (-1);
+if (format[0] == '%' && format[1] == '\0')
+return (-1);
+i = 0;
 while (format[i] != '\0')
 {
 if (format[i] == '%' && format[i + 1] != '%')
 {
-unsigned int j = 0, flag = 0;
+j = 0;
+flag = 0;
 while (print[j].p != NULL)
 {
 if (format[i + 1] == print[j].print[0])
@@ -35,14 +39,23 @@ i++;
 }
 j++;
 }
-if (!flag)
-_putchar(format[i]);
-}
-else if (format[i] == '%' && format[i + 1] == '%')
-_putchar('%');
-else
+if (flag == 0)
+{
 _putchar(format[i]);
 len += 1;
+}
+}
+else if (format[i] == '%' && format[i + 1] == '%')
+{
+_putchar('%');
+i++;
+len += 1;
+}
+else
+{
+_putchar(format[i]);
+len += 1;
+}
 i++;
 }
 va_end(arg);
