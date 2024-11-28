@@ -36,8 +36,8 @@ i++;
 }
 else
 _putchar(format[i]);
-}
 len++;
+}
 va_end(arg);
 return (len);
 }
