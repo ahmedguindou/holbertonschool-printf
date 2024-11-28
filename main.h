@@ -3,6 +3,12 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+/**
+ * struct print - Structure to associate
+ * format specifiers with corresponding functions.
+ * @print: The format specifier character (e.g., 'c', 's', etc.).
+ * @p: The function to handle the format specifier.
+ */
 typedef struct print
 {
 char *print;

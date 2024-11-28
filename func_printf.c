@@ -4,7 +4,7 @@
  * print_char - Prints a character from variadic arguments.
  * @args: The list of arguments containing the character.
  * Return: Always 1 (number of characters printed).
- */
+ **/
 int print_char(va_list args)
 {
 char c;
