@@ -173,4 +173,4 @@ To test the implementation, create a variety of test cases using supported speci
 ---
 
 ## Author
-This implementation was developed by Ahmed Guindou and Rassil Jdidi as part of a project to deepen understanding of variadic functions, string manipulation, and structured programming in C.
+This implementation was developed by Ahmed Guindou and Rassil Jdidi as part of a project to deepen understanding of variadic functions in C.
