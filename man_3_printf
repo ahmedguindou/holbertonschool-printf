@@ -1,0 +1,68 @@
+.TH PRINTF 3 "November 2024" "Holberton School" "Library Functions"
+
+.SH NAME
+_printf \- custom implementation of printf function
+
+.SH SYNOPSIS
+.B #include <stdarg.h>
+.PP
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The _printf function is a custom implementation of the standard printf function. It is designed to format and print data to the standard output. It supports the following conversion specifiers:
+
+.B c
+Prints a single character.
+.B s
+Prints a string of characters.
+.B %
+Prints a literal '%' character.
+.B d, i
+Prints an integer in decimal form.
+
+The function uses the variable argument list, and each specifier in the format string is replaced with the corresponding argument provided to the function. 
+
+It does not handle other formats or special cases like floating-point numbers, hexadecimal values, etc.
+
+.SH PARAMETERS
+.TP
+.B format
+A null-terminated string that contains the format specifiers. It is the only mandatory parameter. 
+.TP
+.B ...
+Additional arguments depending on the specifiers in the format string. The arguments correspond to the format specifiers in the order they appear in the string.
+
+.SH RETURN VALUE
+Returns the number of characters printed (excluding the null byte used to end output to strings).
+
+If an invalid format specifier is encountered, the function does not print anything and returns -1.
+
+.SH EXAMPLES
+.PP
+To print a character:
+.EX
+_printf("Character: %c\n", 'A');
+.EX
+Output: Character: A
+.PP
+To print a string:
+.EX
+_printf("String: %s\n", "Hello");
+.EX
+Output: String: Hello
+.PP
+To print an integer:
+.EX
+_printf("Number: %d\n", 42);
+.EX
+Output: Number: 42
+.PP
+To print a percentage sign:
+.EX
+_printf("Percentage: %%\n");
+.EX
+Output: Percentage: %
+.SH AUTHOR
+Written by [Ahmed Guindou And Rassil Jdidi].
+.SH SEE ALSO
+printf(3), sprintf(3)
