@@ -1,10 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
  * _print_char - Prints a character from variadic arguments.
  * @args: The list of arguments containing the character.
  * Return: Always 1 (number of characters printed).
- */
+ **/
+
 int _print_char(va_list args)
 {
 char c;
@@ -28,7 +30,7 @@ for (i = 0; s[i] != '\0'; i++)
 {
 _putchar(s[i]);
 }
-return (i);
+return (i);
 }
 /**
  * _print_int - Prints an integer from variadic arguments.
