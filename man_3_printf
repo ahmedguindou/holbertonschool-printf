@@ -1,4 +1,4 @@
-.TH PRINTF 3 "November 2024" "Holberton School" "Library Functions"
+.TH PRINTF  "November 2024" "Holberton School" "Library Functions"
 
 .SH NAME
 _printf \- custom implementation of printf function
