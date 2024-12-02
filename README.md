@@ -134,6 +134,13 @@ int _putchar(char c);
 Writes a single character to the standard output using the write system call.
 
 ---
+## Requirements
+Operating System: Linux-based systems (e.g., Ubuntu 20.04 LTS).
+
+Compiler: gcc with support for the -std=gnu89 standard.
+
+Style: Code adheres to the Betty coding style.
+
 
 ## Usage Example
 c
